@@ -18,7 +18,7 @@ Follow these steps to run the Movie Trailer website project:
 
 The application will call the Open Movies Database web API and collect information on some of my favorite Humphrey Bogart movies, then display it in a web browser. Here's a screenshot of what to expect: 
 
-![Best of Bogart Screenshot](https://github.com/vincemaling/Full-Stack-Web-Dev-P1/blob/master/screenshot%20-%20best%20-%20of%20-%20bogie.png) 
+![Best of Bogart Screenshot](https://github.com/vincemaling/Full-Stack-Web-Dev-P1/blob/master/movies/screenshot_best_of_bogie.png) 
 
 Python Libraries Used <a id="chapter-2"></a>
 -----------------
