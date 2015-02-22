@@ -1,0 +1,149 @@
+
+<head>
+    <meta charset="utf-8">
+    <title>Best of Bogie!</title>
+
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <style type="text/css" media="screen">
+        body {
+            padding-top: 80px;
+        }
+        #trailer .modal-dialog {
+            margin-top: 200px;
+            width: 640px;
+            height: 480px;
+        }
+        .hanging-close {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            z-index: 9001;
+        }
+        #trailer-video {
+            width: 100%;
+            height: 100%;
+        }
+        .movie-tile {
+            margin-bottom: 20px;
+            padding-top: 20px;
+        }
+        .movie-tile:hover {
+            background-color: #EEE;
+            cursor: pointer;
+        }
+        .scale-media {
+            padding-bottom: 56.25%;
+            position: relative;
+        }
+        .scale-media iframe {
+            border: none;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background-color: white;
+        }
+    </style>
+    <script type="text/javascript" charset="utf-8">
+        // Pause the video when the modal is closed
+        $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
+            // Remove the src so the player itself gets removed, as this is the only
+            // reliable way to ensure the video stops playing in IE
+            $("#trailer-video-container").empty();
+        });
+        // Start playing the video whenever the trailer modal is opened
+        $(document).on('click', '.movie-tile', function (event) {
+            var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
+            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
+            $("#trailer-video-container").empty().append($("<iframe></iframe>", {
+              'id': 'trailer-video',
+              'type': 'text-html',
+              'src': sourceUrl,
+              'frameborder': 0
+            }));
+        });
+        // Animate in the movies when the page loads
+        $(document).ready(function () {
+          $('.movie-tile').hide().first().show("fast", function showNext() {
+            $(this).next("div").show("fast", showNext);
+          });
+        });
+    </script>
+</head>
+
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <!-- Trailer Video Modal -->
+    <div class="modal" id="trailer">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
+            <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
+          </a>
+          <div class="scale-media" id="trailer-video-container">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Main Page Content -->
+    <div class="container">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Best of Humphrey Bogart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="VjJlBnfyiI4" data-toggle="modal" data-target="#trailer">
+    <img class="poster-img" width="220" height="342" src="http://ia.media-imdb.com/images/M/MV5BNjg5MjM5MzY5M15BMl5BanBnXkFtZTgwNjg3MzgyMjE@._V1_SX300.jpg">
+    <h2>The Big Sleep</h2>
+    <h4>IMDB Rating: 8.1</h4>
+    <p class="text-left"><b>Plot Summary: </b>Private detective Philip Marlowe is hired by a rich family. Before the complex case is over, he's seen murder, blackmail, and what might be love.</p>
+    <p class="text-left"><b>Cast: </b>Humphrey Bogart, Lauren Bacall, John Ridgely, Martha Vickers</p>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="EJvlGh_FgcI" data-toggle="modal" data-target="#trailer">
+    <img class="poster-img" width="220" height="342" src="http://ia.media-imdb.com/images/M/MV5BMjQwNDYyNTk2N15BMl5BanBnXkFtZTgwMjQ0OTMyMjE@._V1_SX300.jpg">
+    <h2>Casablanca</h2>
+    <h4>IMDB Rating: 8.6</h4>
+    <p class="text-left"><b>Plot Summary: </b>Set in unoccupied Africa during the early days of World War II: An American expatriate meets a former lover, with unforeseen complications.</p>
+    <p class="text-left"><b>Cast: </b>Humphrey Bogart, Ingrid Bergman, Paul Henreid, Claude Rains</p>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="UFd0xohHqTI" data-toggle="modal" data-target="#trailer">
+    <img class="poster-img" width="220" height="342" src="http://ia.media-imdb.com/images/M/MV5BMjA0OTY4Mzk3OV5BMl5BanBnXkFtZTgwMDU5NTY5MjE@._V1_SX300.jpg">
+    <h2>Dark Passage</h2>
+    <h4>IMDB Rating: 7.6</h4>
+    <p class="text-left"><b>Plot Summary: </b>A man convicted of murdering his wife escapes from prison and works with a woman to try and prove his innocence.</p>
+    <p class="text-left"><b>Cast: </b>Humphrey Bogart, Lauren Bacall, Bruce Bennett, Agnes Moorehead</p>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="3a9YU1SVbSE" data-toggle="modal" data-target="#trailer">
+    <img class="poster-img" width="220" height="342" src="http://ia.media-imdb.com/images/M/MV5BMTc4MDEzOTMwMl5BMl5BanBnXkFtZTgwMTc2NjgyMjE@._V1_SX300.jpg">
+    <h2>The Maltese Falcon</h2>
+    <h4>IMDB Rating: 8.2</h4>
+    <p class="text-left"><b>Plot Summary: </b>A private detective takes on a case that involves him with three eccentric criminals, a gorgeous liar, and their quest for a priceless statuette.</p>
+    <p class="text-left"><b>Cast: </b>Humphrey Bogart, Mary Astor, Gladys George, Peter Lorre</p>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="ZUxJ2bes00E" data-toggle="modal" data-target="#trailer">
+    <img class="poster-img" width="220" height="342" src="http://ia.media-imdb.com/images/M/MV5BOTg0NjY1NTEyMF5BMl5BanBnXkFtZTgwNjUwMTY3MjE@._V1_SX300.jpg">
+    <h2>The African Queen</h2>
+    <h4>IMDB Rating: 8.0</h4>
+    <p class="text-left"><b>Plot Summary: </b>In Africa during WWI, a gin-swilling riverboat captain is persuaded by a strait-laced missionary to use his boat to attack an enemy warship.</p>
+    <p class="text-left"><b>Cast: </b>Humphrey Bogart, Katharine Hepburn, Robert Morley, Peter Bull</p>
+</div>
+
+    </div>
+  </body>
+</html>
