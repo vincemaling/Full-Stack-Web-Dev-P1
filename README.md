@@ -16,7 +16,11 @@ Follow these steps to run the Movie Trailer website project:
 1. Download and unzip the "Movies" folder.
 2. Open and run the *openmovies.py*.
 
-The application will call the Open Movies Database web API and collect information on some of my favorite Humphrey Bogart movies, then display it in a web browser. Here's a screenshot of what to expect: 
+The application will call the Open Movies Database web API and collect information on some of my favorite Humphrey Bogart movies, then display it in a web browser. 
+
+I have also included an HTML file (movies/freshj_tomatoes.html) that can be opened directly in a browser for demo purposes. This HTML is the output of the Python application.
+
+Here's a screenshot of what to expect: 
 
 ![Best of Bogart Screenshot](https://github.com/vincemaling/Full-Stack-Web-Dev-P1/blob/master/movies/screenshot_best_of_bogie.png) 
 
